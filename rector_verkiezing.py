@@ -15,4 +15,23 @@ class RectorStem(Stem):
 
     def __str__(self):
         return f"Stem op {self.kandidaat} (Rector: {self.faculteit})"
-    
+kandidaten = [
+    RectorKandidaat("Prof. Van den Bossche", "Geneeskunde"),
+    RectorKandidaat("Dr. Maes", "Ingenieurswetenschappen"),
+    RectorKandidaat("Prof. Claes", "Rechten")
+]
+
+# Lijst van kiezers
+kiezers = [Kiezer(f"Kiezer {i}") for i in range(1, 21)]
+
+# Elke kiezer stemt op een willekeurige kandidaat
+for kiezer in kiezers:
+    gekozen = choice(kandidaten)
+    stem = RectorStem(gekozen, gekozen.faculteit)
+    gekozen.geef_stem(stem)
+    print(f"{kiezer.naam} stemt: {stem}")
+
+# Resultaten tonen
+print("\nUitslag rectorverkiezing:")
+for kandidaat in kandidaten:
+    print(f"{kandidaat.naam}: {len(kandidaat.stemmen)} stemmen")
