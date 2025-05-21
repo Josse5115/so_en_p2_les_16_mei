@@ -32,9 +32,9 @@ from random import choice
 
 # Lijst van decaankandidaten
 kandidaten = [
-    DecaanKandidaat("Dr. Dewaele", "Communicatiewetenschappen"),
-    DecaanKandidaat("Prof. Buelens", "Toegepaste Taalkunde"),
-    DecaanKandidaat("Prof. Willems", "Geschiedenis")
+    DecaanKandidaat("Dr. Jupiler", "Communicatiewetenschappen"),
+    DecaanKandidaat("Prof. Stella", "Bierkunde"),
+    DecaanKandidaat("Prof. Corona", "Geschiedenis")
 ]
 
 # Lijst van decaankiezers (verdeeld over opleidingen)
