@@ -28,3 +28,25 @@ class DecaanKiezer(Kiezer):
             print(f"{self.naam} heeft gestemd op {kandidaat} ({self.opleiding})")
         else:
             print(f"{self.naam} kan niet stemmen op {kandidaat} ({kandidaat.opleiding})")
+from random import choice
+
+# Lijst van decaankandidaten
+kandidaten = [
+    DecaanKandidaat("Dr. Dewaele", "Communicatiewetenschappen"),
+    DecaanKandidaat("Prof. Buelens", "Toegepaste Taalkunde"),
+    DecaanKandidaat("Prof. Willems", "Geschiedenis")
+]
+
+# Lijst van decaankiezers (verdeeld over opleidingen)
+opleidingen = ["Communicatiewetenschappen", "Toegepaste Taalkunde", "Geschiedenis", "Wiskunde"]
+kiezers = [DecaanKiezer(f"Kiezer {i}", choice(opleidingen)) for i in range(1, 21)]
+
+# Laat elke kiezer proberen te stemmen
+for kiezer in kiezers:
+    gekozen = choice(kandidaten)
+    kiezer.stem(gekozen)
+
+# Toon resultaten
+print("\nUitslag decaanverkiezing:")
+for kandidaat in kandidaten:
+    print(f"{kandidaat.naam} ({kandidaat.opleiding}): {len(kandidaat.stemmen)} stemmen")
